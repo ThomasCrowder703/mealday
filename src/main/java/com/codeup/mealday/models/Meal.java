@@ -1,4 +1,71 @@
 package com.codeup.mealday.models;
 
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "meals")
 public class Meal {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @Column(nullable = false, columnDefinition = "text")
+    private String ingredient_list;
+
+    @Column()
+    private int calorie_intake;
+
+    @Column(columnDefinition = "text")
+    private String direction;
+
+    @ManyToOne
+    @JoinColumn (name = "user_id")
+    private User user;
+
+    public Meal(){};
+
+    public Meal(long id, String ingredient_list, int calorie_intake, String direction){
+        this.id = id;
+        this.ingredient_list = ingredient_list;
+        this.calorie_intake = calorie_intake;
+        this.direction = direction;
+    }
+
+// GET SET ID
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+//    GET SET INGREDIENTS
+    public String getIngredient_list(){
+        return ingredient_list;
+    }
+
+    public void setIngredient_list(String ingredient_list){
+        this.ingredient_list = ingredient_list;
+    }
+
+//    GET SET CALORIES
+    public int getCalorie_intake(){
+        return calorie_intake;
+    }
+
+    public void setCalorie_intake(int calorie_intake){
+        this.calorie_intake = calorie_intake;
+    }
+
+//    GET SET DIRECTIONS
+    public String getDirection(){
+        return direction;
+    }
+
+    public void setDirection(String direction){
+        this.direction = direction;
+    }
+
 }
