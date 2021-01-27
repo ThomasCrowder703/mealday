@@ -23,6 +23,11 @@ public class Meal {
     @JoinColumn (name = "user_id")
     private User user;
 
+    @ManyToOne
+    @JoinColumn (name = "day_id")
+    private Day day;
+
+
     public Meal(){};
 
     public Meal(long id, String ingredient_list, int calorie_intake, String direction){
@@ -30,6 +35,15 @@ public class Meal {
         this.ingredient_list = ingredient_list;
         this.calorie_intake = calorie_intake;
         this.direction = direction;
+    }
+
+    public Meal(long id, String ingredient_list, int calorie_intake, String direction, User user, Day day){
+        this.id = id;
+        this.ingredient_list = ingredient_list;
+        this.calorie_intake = calorie_intake;
+        this.direction = direction;
+        this.user = user;
+        this.day = day;
     }
 
 // GET SET ID
@@ -68,4 +82,22 @@ public class Meal {
         this.direction = direction;
     }
 
+//    GET AND SET USER
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+//    GET SET DAY
+
+    public Day getDay() {
+        return day;
+    }
+
+    public void setDay(Day day) {
+        this.day = day;
+    }
 }
