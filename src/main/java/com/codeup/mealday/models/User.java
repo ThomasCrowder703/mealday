@@ -16,18 +16,23 @@ public class User {
     @Column(nullable = false, length =100, unique = true)
     private String username;
 
+    @Column()
+    private String profilePicture;
+
     @Column(nullable = false)
     private String password;
 
     public User(){};
 
-    public User(long id, String email, String username, String password){
+    public User(long id, String email, String username, String password, String profilePicture){
         this.id = id;
         this. email = email;
         this.username = username;
         this.password = password;
+        this.profilePicture = profilePicture;
     }
 
+//    GET SET ID
     public long getId(){
         return id;
     }
@@ -36,6 +41,7 @@ public class User {
         this.id = id;
     }
 
+//    GET SET EMAIL
     public String getEmail(){
         return email;
     }
@@ -44,6 +50,7 @@ public class User {
         this.email = email;
     }
 
+//    GET SET USERNAME
     public String getUsername(){
         return username;
     }
@@ -51,6 +58,7 @@ public class User {
         this.username = username;
     }
 
+//    GET SET PASSWORD
     public String getPassword(){
         return password;
     }
@@ -59,4 +67,12 @@ public class User {
         this.password = password;
     }
 
+//    GET SET PROFILEPIC
+    public String getProfilePicture() {
+        return profilePicture;
+    }
+
+    public void setProfilePicture(String profilePicture) {
+        this.profilePicture = profilePicture;
+    }
 }
