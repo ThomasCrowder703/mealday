@@ -13,12 +13,16 @@ public class Day {
     @Column()
     private int hour;
 
+    @Column(nullable = false)
+    private String name;
+
 
     public Day(){};
 
-    public Day(long id, int hour){
+    public Day(long id, int hour, String name){
         this.id = id;
         this.hour = hour;
+        this.name = name;
     }
 
 
@@ -40,4 +44,12 @@ public class Day {
         this.hour = hour;
     }
 
+//    GET AND SET NAME
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
