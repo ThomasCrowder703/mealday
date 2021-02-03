@@ -22,7 +22,7 @@ public class UserController {
     @GetMapping("/sign-up")
     public String showSignupForm(Model model){
         model.addAttribute("user", new User());
-        return "users/sign-up";
+        return "sign-up";
     }
 
     @PostMapping("/sign-up")
@@ -31,5 +31,13 @@ public class UserController {
         user.setPassword(hash);
         userDao.save(user);
         return "redirect:/login";
+    }
+
+    @Controller
+    public class AuthenticationController {
+        @GetMapping("/login")
+        public String showLoginForm() {
+            return "login";
+        }
     }
 }
