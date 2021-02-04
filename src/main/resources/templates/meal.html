@@ -3,7 +3,14 @@
 <head th:replace="partials/head.html :: head"></head>
 <body>
 
-<p>meal</p>
+<h1>Create your meal!</h1>
+<form method="POST" th:action="@{/create}">
+    <label for="meal-title">Title of your meal!</label>
+    <input class="form-control" id="meal-title">
+
+    <label for="meal-content">Ingredients/Directions</label>
+    <textarea class="form-control" id="meal-content"></textarea>
+</form>
 
 <span th:replace="partials/scripts.html :: scripts"></span>
 </body>
