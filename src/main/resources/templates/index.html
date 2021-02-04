@@ -10,7 +10,11 @@
         <h1 class="display-4 title-text">Meal Day</h1>
         <p class="lead title-text">The art of organized spontaneity!</p>
     </div>
-    <button type="button" class="btn btn-success title-text">Start your Journey!</button>
+    <form th:action="@{/create}" method="GET">
+
+        <button type="submit" class="btn btn-success title-text">Start your Journey!</button>
+    </form>
+
 </div>
 
 <span th:replace="partials/scripts.html :: scripts"></span>
