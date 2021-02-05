@@ -10,6 +10,9 @@ public class Meal {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(nullable = false)
+    private String title;
+
     @Column(nullable = false, columnDefinition = "text")
     private String ingredient_list;
 
@@ -37,13 +40,14 @@ public class Meal {
         this.direction = direction;
     }
 
-    public Meal(long id, String ingredient_list, int calorie_intake, String direction, User user, Day day){
+    public Meal(long id, String ingredient_list, int calorie_intake, String direction, User user, Day day,String title){
         this.id = id;
         this.ingredient_list = ingredient_list;
         this.calorie_intake = calorie_intake;
         this.direction = direction;
         this.user = user;
         this.day = day;
+        this.title = title;
     }
 
 // GET SET ID
@@ -99,5 +103,14 @@ public class Meal {
 
     public void setDay(Day day) {
         this.day = day;
+    }
+
+//    GET SET TITLE
+    public String getTitle(){
+        return title;
+    }
+
+    public void setTitle(String title){
+        this.title = title;
     }
 }
