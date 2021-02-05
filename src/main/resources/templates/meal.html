@@ -4,12 +4,14 @@
 <body>
 
 <h1>Create your meal!</h1>
-<form method="POST" th:action="@{/create}">
-    <label for="meal-title">Title of your meal!</label>
-    <input class="form-control" id="meal-title">
-
-    <label for="meal-content">Ingredients/Directions</label>
-    <textarea class="form-control" id="meal-content"></textarea>
+<form th:method="POST" th:action="@{/create}">
+    <label th:for="title">Title</label>
+    <input th:id="title" name="title"  class="form-control" >
+    <br />
+   <label th:for="ingredients">Ingredients</label>
+    <input th:id="ingredients" name="ingredients"  class="form-control">
+    <br />
+    <input class="btn btn-success" type="submit">
 </form>
 
 <span th:replace="partials/scripts.html :: scripts"></span>
