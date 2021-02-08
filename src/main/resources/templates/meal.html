@@ -20,6 +20,11 @@
     <input class="btn btn-success" type="submit">
 </form>
 
+<section>
+    <h2>Meal Bank!</h2>
+    <div th:text="${userMeal}"></div>
+</section>
+
 <span th:replace="partials/scripts.html :: scripts"></span>
 </body>
 </html>
