@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 public class MealController {
 
@@ -23,6 +25,8 @@ public class MealController {
 
         Meal userMeal = mealDao.findByUserId(user.getId());
         model.addAttribute("userMeal", userMeal.getTitle());
+
+
 
 
         return "meal";
