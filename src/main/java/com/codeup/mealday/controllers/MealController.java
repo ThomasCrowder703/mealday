@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -23,8 +24,12 @@ public class MealController {
     public String mealPage(Model model){
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
-        Meal userMeal = mealDao.findByUserId(user.getId());
-        model.addAttribute("userMeal", userMeal.getTitle());
+        List<Meal> userMealDb = mealDao.findByUserId(user.getId());
+        ArrayList<String> userMeals = new ArrayList<>();
+        for(Meal meal: userMealDb){
+            userMeals.add(meal.getTitle());
+        }
+        model.addAttribute("userMeal", userMeals);
 
 
 
