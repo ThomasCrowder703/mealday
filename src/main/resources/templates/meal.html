@@ -2,23 +2,37 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:replace="partials/head.html :: head"></head>
 <body>
+<nav th:replace="partials/navbar.html :: navbar"></nav>
 
-<h1>Create your meal!</h1>
-<form th:method="POST" th:action="@{/create}">
-    <label th:for="title">Title</label>
-    <input th:id="title" name="title"  class="form-control" >
-    <br />
-   <label th:for="ingredients">Ingredients</label>
-    <input th:id="ingredients" name="ingredients"  class="form-control">
-    <br />
-    <label th:for="directions">Directions(Optional)</label>
-    <input th:id="directions" name="ingredients"  class="form-control">
-    <br />
-    <label th:for="caloriess">Macro Nutrients(Optional)</label>
-    <input th:id="calories" name="ingredients"  class="form-control">
-    <br />
-    <input class="btn btn-success" type="submit">
+
+<form th:method="POST" th:action="@{/create}" class="d-flex justify-content-center">
+
+            <div class="card" style="width: 18rem;">
+                <div class="card-header text-center title-text">
+                    <h1>Create your meal!</h1>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <label th:for="title">Title</label>
+                        <input th:id="title" name="title"  class="form-control" >
+                    </li>
+                    <li class="list-group-item">
+                        <label th:for="ingredients">Ingredients</label>
+                        <input th:id="ingredients" name="ingredients"  class="form-control">
+                    </li>
+                    <li class="list-group-item">
+                        <label th:for="directions">Directions(Optional)</label>
+                        <input th:id="directions" name="ingredients"  class="form-control">
+                    </li>
+                    <li class="list-group-item">
+                        <label th:for="caloriess">Macro Nutrients(Optional)</label>
+                        <input th:id="calories" name="ingredients"  class="form-control">
+                    </li>
+                </ul>
+            </div>
+            <input class="btn btn-success" type="submit">
 </form>
+
 
 <section>
     <h2>Meal Bank!</h2>
