@@ -6,31 +6,51 @@
 
 
 <form th:method="POST" th:action="@{/create}" class="d-flex justify-content-center">
-
-            <div class="card" style="width: 18rem;">
-                <div class="card-header text-center title-text">
-                    <h1>Create your meal!</h1>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                        <label th:for="title">Title</label>
-                        <input th:id="title" name="title"  class="form-control" >
-                    </li>
-                    <li class="list-group-item">
-                        <label th:for="ingredients">Ingredients</label>
-                        <input th:id="ingredients" name="ingredients"  class="form-control">
-                    </li>
-                    <li class="list-group-item">
-                        <label th:for="directions">Directions(Optional)</label>
-                        <input th:id="directions" name="ingredients"  class="form-control">
-                    </li>
-                    <li class="list-group-item">
-                        <label th:for="caloriess">Macro Nutrients(Optional)</label>
-                        <input th:id="calories" name="ingredients"  class="form-control">
-                    </li>
-                </ul>
-            </div>
-            <input class="btn btn-success" type="submit">
+    <div class="card" style="width: 18rem;">
+        <div class="card-header text-center">
+           Create your meal!
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <label th:for="title">Title</label>
+                <input th:id="title" name="title"  class="form-control" >
+            </li>
+            <li class="list-group-item">
+                <label th:for="ingredients">Ingredients</label>
+                <input th:id="ingredients" name="ingredients"  class="form-control">
+            </li>
+            <li class="list-group-item">
+                <label th:for="directions">Directions(Optional)</label>
+                <input th:id="directions" name="ingredients"  class="form-control">
+            </li>
+            <li class="list-group-item">
+                <label th:for="caloriess">Macro Nutrients(Optional)</label>
+                <input th:id="calories" name="ingredients"  class="form-control">
+            </li>
+        </ul>
+    </div>
+<!--MACRO INPUT-->
+    <div class="card" style="width: 18rem;">
+        <div class="card-header text-center">
+            Macro Nutrients
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <label th:for="carbs">Carbs</label>
+                <input th:id="carbs" name="carbs"  class="form-control" placeholder="Ex: 5g/10mL" >
+            </li>
+            <li class="list-group-item">
+                <label th:for="protein">Protein</label>
+                <input th:id="protein" name="protein"  class="form-control" placeholder="Ex: 5g/10mL">
+            </li>
+            <li class="list-group-item">
+                <label th:for="fats">Fats</label>
+                <input th:id="fats" name="fats"  class="form-control" placeholder="Ex: 5g/10mL">
+            </li>
+        </ul>
+    </div>
+    <br />
+    <input class="btn btn-success" type="submit">
 </form>
 
 
