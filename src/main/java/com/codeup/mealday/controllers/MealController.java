@@ -29,7 +29,7 @@ public class MealController {
         for(Meal meal: userMealDb){
             userMeals.add(meal.getTitle());
         }
-        model.addAttribute("userMeal", userMeals);
+        model.addAttribute("userMeal", userMeals.toString().replace("[","").replace("]",""));
 
 
 
