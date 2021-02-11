@@ -17,7 +17,7 @@ public class Meal {
     private String ingredient_list;
 
     @Column()
-    private int calorie_intake;
+    private String calorie_intake;
 
     @Column(columnDefinition = "text")
     private String direction;
@@ -33,14 +33,14 @@ public class Meal {
 
     public Meal(){};
 
-    public Meal(long id, String ingredient_list, int calorie_intake, String direction){
+    public Meal(long id, String ingredient_list, String calorie_intake, String direction){
         this.id = id;
         this.ingredient_list = ingredient_list;
         this.calorie_intake = calorie_intake;
         this.direction = direction;
     }
 
-    public Meal(long id, String ingredient_list, int calorie_intake, String direction, User user, Day day,String title){
+    public Meal(long id, String ingredient_list, String calorie_intake, String direction, User user, Day day,String title){
         this.id = id;
         this.ingredient_list = ingredient_list;
         this.calorie_intake = calorie_intake;
@@ -69,11 +69,11 @@ public class Meal {
     }
 
 //    GET SET CALORIES
-    public int getCalorie_intake(){
+    public String getCalorie_intake(){
         return calorie_intake;
     }
 
-    public void setCalorie_intake(int calorie_intake){
+    public void setCalorie_intake(String calorie_intake){
         this.calorie_intake = calorie_intake;
     }
 

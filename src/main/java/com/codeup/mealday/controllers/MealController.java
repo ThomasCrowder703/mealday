@@ -42,7 +42,9 @@ public class MealController {
             @RequestParam(name = "title") String title,
             @RequestParam(name = "ingredients") String ingredients,
             @RequestParam(name = "directions", required = false) String directions,
-            @RequestParam(name = "calories", required = false) Integer calories
+            @RequestParam(name = "carbs", required = false) String carbs,
+            @RequestParam(name = "protein", required = false) String protein,
+            @RequestParam(name = "fats", required = false) String fats
             ){
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Meal userMeal = new Meal();
@@ -54,8 +56,16 @@ public class MealController {
             userMeal.setDirection(directions);
         }
 
-        if(calories != null){
-            userMeal.setCalorie_intake(calories);
+        if(carbs != null){
+            userMeal.setCalorie_intake(carbs);
+        }
+
+        if(protein != null){
+            userMeal.setCalorie_intake(protein);
+        }
+
+        if(fats != null){
+            userMeal.setCalorie_intake(fats);
         }
 
         mealDao.save(userMeal);
