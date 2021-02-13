@@ -33,15 +33,15 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
                 <label th:for="carbs">Carbs</label>
-                <input th:id="carbs" name="carbs"  class="form-control" placeholder="Ex: 5g/10mL" >
+                <input type="number" th:id="carbs" name="carbs"  class="form-control" min="0">
             </li>
             <li class="list-group-item">
                 <label th:for="protein">Protein</label>
-                <input th:id="protein" name="protein"  class="form-control" placeholder="Ex: 5g/10mL">
+                <input type="number" th:id="protein" name="protein"  class="form-control" min="0">
             </li>
             <li class="list-group-item">
                 <label th:for="fats">Fats</label>
-                <input th:id="fats" name="fats"  class="form-control" placeholder="Ex: 5g/10mL">
+                <input type="number" th:id="fats" name="fats"  class="form-control" min="0">
             </li>
         </ul>
     </div>

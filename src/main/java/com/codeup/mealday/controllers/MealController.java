@@ -57,15 +57,15 @@ public class MealController {
         }
 
         if(carbs != null){
-            userMeal.setCalorie_intake(carbs);
+            userMeal.setCalorie_intake(carbs + " of carbs");
         }
 
         if(protein != null){
-            userMeal.setCalorie_intake(protein);
+            userMeal.setCalorie_intake(protein + " of protein");
         }
 
         if(fats != null){
-            userMeal.setCalorie_intake(fats);
+            userMeal.setCalorie_intake(fats + " of fats");
         }
 
         mealDao.save(userMeal);
